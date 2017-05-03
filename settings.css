@@ -1,0 +1,154 @@
+#settings {
+  width: 18em;
+  font-family: 'omnes-ps', 'Montserrat', sans-serif;
+  font-size: 80%;
+  padding: 1em;
+}
+
+img#icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 5em;
+  height: 5em;
+}
+
+h1 {
+  text-align: center;
+  color: #444;
+  font-size: 120%;
+  font-weight: 200;
+}
+
+h2 {
+  color: #888;
+  font-size: 100%;
+  font-weight: 200;
+  margin-bottom: 0;
+}
+
+#settings-url-list, #extension-settings {
+  overflow: hidden;
+  transition: 2s;
+}
+
+label {
+  display: block;
+  margin-top: 8px;
+}
+
+input {
+  display: block;
+}
+
+select {
+  float: right;
+  height: 22px;
+  border: 0;
+  border-bottom: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  height: 22px;
+  border: 0;
+  border-bottom: 1px solid #bbb;
+  border-radius: 4px;
+  background: transparent;
+}
+
+button {
+  margin-top: 12px;
+  width: 100%;
+  height: 28px;
+  color: white;
+  background: #fa0e6a;
+  transition: all .2s ease;
+  border: 0;
+  border-bottom: 1px solid #bbb;
+  border-radius: 4px;
+  cursor: hand;
+}
+
+button:hover {
+  background: #bc216b;
+}
+
+input[type=text]:focus {
+  border: 0;
+  border-bottom: 1px solid #888;
+  outline: none;
+}
+
+input[type=submit] {
+  width: 54px;
+  height: 18px;
+  margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Toggle css */
+.toggle {
+  display: none;
+}
+.toggle, .toggle:after, .toggle:before, .toggle *, .toggle *:after, .toggle *:before, .toggle + .toggle-btn {
+  box-sizing: border-box;
+}
+.toggle::selection, .toggle:after::selection, .toggle:before::selection, .toggle *::selection, .toggle *:after::selection, .toggle *:before::selection, .toggle + .toggle-btn::selection {
+  background: none;
+}
+
+.toggle + .toggle-btn {
+  outline: 0;
+  display: block;
+  width: 36px;
+  height: 18px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  float: right;
+}
+.toggle + .toggle-btn:after, .toggle + .toggle-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+  left: 0;
+}
+.toggle + .toggle-btn:before {
+  display: none;
+}
+.toggle:checked + .toggle-btn:after {
+  left: 50%;
+}
+
+.toggle-light + .toggle-btn {
+  background: #ddd;
+  border-radius: 2em;
+  padding: 2px;
+  transition: all .4s ease;
+}
+.toggle-light + .toggle-btn:after {
+  border-radius: 50%;
+  background: #fff;
+  transition: all .2s ease;
+}
+.toggle-light:checked + .toggle-btn {
+  background: #fa0e6a;
+}
+
+.toggle-light:hover + .toggle-btn:hover {
+  background: #bc216b;
+}
+
+.toggle-text {
+  float: left;
+}
+
+.toggle-container {
+  display: inline-block;
+  width: 100%;
+}

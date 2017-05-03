@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="settings.css">
+  </head>
+
+  <body>
+    <div id="settings">
+      <img id="icon" src="/icons/winky-128.png" alt="Power Token icon" />
+      <h1>Power Token</h1>
+
+      <form action="#" method="post" id="settings-form">
+        <h2>Settings</h2>
+
+        <div id="extension-settings">
+          <div class="toggle-container">
+            <label class="toggle-text">Auto Login</label>
+            <input id="settings-auto-login-toggle" type="checkbox" class="toggle toggle-light">
+            <label for="settings-auto-login-toggle" class="toggle-btn"></label>
+          </div>
+
+          <div id="settings-email">
+            <label>
+              Admin Email
+            </label>
+            <input id="settings-email-entry" class="settings entry email" type="text" />
+          </div>
+
+          <div id="settings-password">
+            <label>
+              Admin Password
+            </label>
+            <input id="settings-password-entry" class="settings entry password" type="password" />
+          </div>
+
+          <div id="settings-token">
+            <label>
+              Admin Token
+            </label>
+            <input id="settings-token-entry" class="settings entry token" type="password" />
+          </div>
+
+          <button type="submit" id="settings-save-btn">Save</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="settings.js"></script>
+  </body>
+</html>
