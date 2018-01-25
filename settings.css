@@ -63,7 +63,7 @@ button {
   width: 100%;
   height: 28px;
   color: white;
-  background: #fa0e6a;
+  background: #FC6D26;
   transition: all .2s ease;
   border: 0;
   border-bottom: 1px solid #bbb;
@@ -72,7 +72,11 @@ button {
 }
 
 button:hover {
-  background: #bc216b;
+  background: #E24329;
+}
+
+button:active {
+  background: #FCA326;
 }
 
 input[type=text]:focus {

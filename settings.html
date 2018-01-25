@@ -9,38 +9,27 @@
 
   <body>
     <div id="settings">
-      <img id="icon" src="/icons/winky-128.png" alt="Power Token icon" />
-      <h1>Power Token</h1>
+      <img id="icon" src="/icons/gitlab-logo.svg" />
+      <h1>GitLab Open in Editor</h1>
 
       <form action="#" method="post" id="settings-form">
         <h2>Settings</h2>
 
         <div id="extension-settings">
-          <div class="toggle-container">
-            <label class="toggle-text">Auto Login</label>
+          <!-- <div class="toggle-container">
+            <label class="toggle-text">Enabled</label>
             <input id="settings-auto-login-toggle" type="checkbox" class="toggle toggle-light">
             <label for="settings-auto-login-toggle" class="toggle-btn"></label>
+          </div> -->
+
+          <div id="settings-protocol">
+            <label>Editor Protocol</label>
+            <input id="settings-protocol-entry" placeholder="vscode://file//" class="settings entry" type="text" />
           </div>
 
-          <div id="settings-email">
-            <label>
-              Admin Email
-            </label>
-            <input id="settings-email-entry" class="settings entry email" type="text" />
-          </div>
-
-          <div id="settings-password">
-            <label>
-              Admin Password
-            </label>
-            <input id="settings-password-entry" class="settings entry password" type="password" />
-          </div>
-
-          <div id="settings-token">
-            <label>
-              Admin Token
-            </label>
-            <input id="settings-token-entry" class="settings entry token" type="password" />
+          <div id="settings-local-directory">
+            <label>Local Directory</label>
+            <input id="settings-directory-entry" placeholder="/User/..." class="settings entry directory" type="text" />
           </div>
 
           <button type="submit" id="settings-save-btn">Save</button>
