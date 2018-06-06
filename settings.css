@@ -37,6 +37,10 @@ label {
   margin-top: 8px;
 }
 
+span.hint {
+  font-size: 80%;
+}
+
 input {
   display: block;
 }
