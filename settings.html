@@ -16,12 +16,24 @@
         <h2>Settings</h2>
 
         <div id="extension-settings">
-          <div id="settings-protocol">
-            <label>Editor Protocol</label>
+          <div id="settings-protocol" class="setting-group">
+            <label class="inline">Editor Protocol</label>
+            <select id="settings-protocol-dropdown">
+              <optgroup>
+                <option value="atom://core/open/file?filename=">Atom</option>
+                <option value="vscode://file/">VS Code</option>
+                <option value="x-mine://open?file=">RubyMine</option>
+              </optgroup>
+
+              <optgroup>
+                <option value="custom">Custom</option>
+              </optgroup>
+            </select>
+
             <input id="settings-protocol-entry" placeholder="vscode://file/" class="settings entry" type="text" />
           </div>
 
-          <div id="settings-local-directory">
+          <div id="settings-local-directory" class="setting-group">
             <label>Local Directory</label>
             <input id="settings-directory-entry" placeholder="/User/..." class="settings entry directory" type="text" />
             <span class="hint">Ensure to use an absolute path to the project directory</span>

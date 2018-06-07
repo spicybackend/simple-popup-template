@@ -5,6 +5,11 @@
   padding: 20px;
 }
 
+div.setting-group {
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
 img#icon {
   display: block;
   margin-left: auto;
@@ -32,9 +37,17 @@ h2 {
   transition: 2s;
 }
 
+.hidden {
+  display: none;
+}
+
 label {
   display: block;
   margin-top: 8px;
+}
+
+label.inline {
+  display: inline-block;
 }
 
 span.hint {
@@ -46,6 +59,7 @@ input {
 }
 
 select {
+  margin-top: 8px;
   float: right;
   height: 22px;
   border: 0;
@@ -60,6 +74,10 @@ input[type=text], input[type=password] {
   border-bottom: 1px solid #bbb;
   border-radius: 4px;
   background: transparent;
+}
+
+input[type=text].invalid, input[type=password].invalid {
+  border-bottom: 1px solid red;
 }
 
 button {
