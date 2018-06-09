@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <div id="settings">
+    <div id="settings-popup">
       <img id="icon" src="/icons/gitlab-logo.svg" />
       <h1>GitLab Open in Editor</h1>
 
@@ -16,8 +16,9 @@
         <h2>Settings</h2>
 
         <div id="extension-settings">
-          <div id="settings-protocol" class="setting-group">
+          <fieldset class="editor">
             <label class="inline">Editor Protocol</label>
+
             <select id="settings-protocol-dropdown">
               <optgroup>
                 <option value="atom://core/open/file?filename=">Atom</option>
@@ -31,13 +32,16 @@
             </select>
 
             <input id="settings-protocol-entry" placeholder="vscode://file/" class="settings entry" type="text" />
-          </div>
+          </fieldset>
 
-          <div id="settings-local-directory" class="setting-group">
+          <fieldset class="project">
+            <label>Repository URL</label>
+            <input class="repository settings entry" type="text" placeholder="https://gitlab.com/gitlab/www-gitlab-com" />
+
             <label>Local Directory</label>
-            <input id="settings-directory-entry" placeholder="/User/..." class="settings entry directory" type="text" />
+            <input class="directory settings entry" type="text" placeholder="/User/..." />
             <span class="hint">Ensure to use an absolute path to the project directory</span>
-          </div>
+          </fieldset>
 
           <button type="submit" id="settings-save-btn">Save</button>
         </div>

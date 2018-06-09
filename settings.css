@@ -1,13 +1,14 @@
-#settings {
+#settings-popup {
   width: 240px;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   padding: 20px;
 }
 
-div.setting-group {
-  margin-top: 4px;
-  margin-bottom: 12px;
+fieldset {
+  margin: 4px 0 12px 0;
+  border: 0;
+  padding: 0;
 }
 
 img#icon {

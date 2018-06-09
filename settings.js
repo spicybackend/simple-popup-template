@@ -2,14 +2,16 @@ let webExtension = chrome || browser;
 
 let protocolEntry = document.getElementById('settings-protocol-entry');
 let protocolDropdown = document.getElementById('settings-protocol-dropdown');
-let directoryEntry = document.getElementById('settings-directory-entry');
+
+let directoryEntry = document.getElementsByClassName('directory')[0];  // deprecated
 
 let settingsForm = document.getElementById('settings-form');
 
 function saveSettings() {
   webExtension.storage.local.set({
     protocol: protocolEntry.value,
-    directory: directoryEntry.value
+    projects: buildProjectsFromSettings(),
+    directory: directoryEntry.value  // deprecated
   });
 }
 
@@ -30,9 +32,49 @@ function fillSettings() {
     }
 
     if (settings.directory) {
-      directoryEntry.value = settings.directory;
+      directoryEntry.value = settings.directory;  // deprecated
+    }
+
+    if (settings.projects) {
+      fillProjectSettings(settings.projects);
     }
   });
+}
+
+function buildProjectsFromSettings() {
+  let projectForms = document.getElementsByClassName('project');
+
+  let projects = Array.from(projectForms).map(function(projectForm) {
+    let projectRepo = null;
+    let projectDirectory = null;
+
+    projectForm.childNodes.forEach(function(node) {
+      if (node.tagName === "INPUT") {
+        if (node.classList.contains('repository')) {
+          projectRepo = node.value;
+        } else if (node.classList.contains('directory')) {
+          projectDirectory = node.value;
+        }
+      }
+    })
+
+    return {repository: projectRepo, directory: projectDirectory};
+  });
+
+  return projects;
+}
+
+function fillProjectSettings(projects) {
+  projects.forEach(function(project) {
+    // TODO grab the last fieldset and change the inputs inside for multi
+    Array.from(document.getElementsByTagName('input')).forEach(function(node) {
+      if (node.classList.contains('repository')) {
+        node.value = project.repository;
+      } else if (node.classList.contains('directory')) {
+        node.value = project.directory;
+      }
+    })
+  })
 }
 
 function setListeners() {
