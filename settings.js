@@ -61,19 +61,33 @@ function buildProjectsFromSettings() {
     return {repository: projectRepo, directory: projectDirectory};
   });
 
-  return projects;
+  return projects.filter(function(project) {
+    return project.repository || project.projectDirectory;
+  });
 }
 
 function fillProjectSettings(projects) {
   projects.forEach(function(project) {
-    // TODO grab the last fieldset and change the inputs inside for multi
-    Array.from(document.getElementsByTagName('input')).forEach(function(node) {
-      if (node.classList.contains('repository')) {
-        node.value = project.repository;
-      } else if (node.classList.contains('directory')) {
-        node.value = project.directory;
+    lastProjectFields = Array.from(document.getElementsByTagName('fieldset')).slice(-1).pop();
+
+    lastProjectFields.childNodes.forEach(function(node) {
+      if (node.tagName === "INPUT") {
+        if (node.classList.contains('repository')) {
+          node.value = project.repository;
+        } else if (node.classList.contains('directory')) {
+          node.value = project.directory;
+        }
       }
     })
+
+    newProjectFields = lastProjectFields.cloneNode(true);
+    newProjectFields.childNodes.forEach(function(node) {
+      if (node.tagName === "INPUT") {
+        node.value = null;
+      }
+    })
+
+    lastProjectFields.parentNode.insertBefore(newProjectFields, lastProjectFields.nextSibling);
   })
 }
 
