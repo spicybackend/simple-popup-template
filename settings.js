@@ -110,12 +110,7 @@ function setListeners() {
   })
 
   settingsForm.addEventListener('submit', function(e) {
-    if (protocolEntry.value.match(/^[^:]+(?=:\/\/)/)) {
-      saveSettings();
-    } else {
-      protocolEntry.classList.add('invalid');
-      e.preventDefault();
-    }
+    saveSettings();
   });
 }
 
