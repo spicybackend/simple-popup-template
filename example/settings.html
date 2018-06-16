@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../settings.css">
+  </head>
+
+  <body>
+    <div id="settings-popup">
+      <img id="icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg" />
+      <h1>An Example Popup</h1>
+
+      <form action="#" method="post" id="settings-form">
+        <h2>With Settings</h2>
+
+        <div id="extension-settings">
+          <fieldset class="toggle-fields">
+            <div class="toggle-container">
+              <label class="toggle-text">Using Toggles</label>
+              <input id="settings-toggle" type="checkbox" class="toggle toggle-light">
+              <label for="settings-toggle" class="toggle-btn"></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="dropdown-fields">
+            <label class="inline">Dropdowns</label>
+
+            <select id="settings-dropdown">
+              <option value="select1">Selection 1</option>
+              <option value="select2">Selection 2</option>
+            </select>
+          </fieldset>
+
+          <fieldset class="input-fields">
+            <label>And Text Inputs</label>
+            <input id="settings-entry" class="settings entry" type="text" placeholder="Lorem ipsum" />
+            <span class="hint">And here's a small relevant piece of text</span>
+          </fieldset>
+
+          <button type="submit" id="settings-save-btn">Save</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="settings.js"></script>
+  </body>
+</html>
