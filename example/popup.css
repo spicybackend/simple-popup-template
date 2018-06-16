@@ -1,0 +1,12 @@
+button {
+  color: white;
+  background: #ef820d;
+}
+
+.toggle-light:checked + .toggle-btn {
+  background: #ef820d;
+}
+
+.toggle-light:hover + .toggle-btn:hover {
+  background: #ef820d;
+}
