@@ -1,0 +1,3 @@
+[submodule "simple-popup-style"]
+	path = simple-popup-style
+	url = git@github.com:yumoose/simple-popup-style.git

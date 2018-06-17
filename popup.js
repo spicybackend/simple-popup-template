@@ -17,14 +17,16 @@ function saveSettings() {
 
 function fillSettings() {
   webExtension.storage.local.get('examplePopupSettings', function (settings) {
-    if (settings.toggle)
-      toggle.checked = settings.toggle;
+    let popupSettings = settings.examplePopupSettings;
 
-    if (settings.dropdown)
-      dropdown.value = settings.dropdown
+    if (popupSettings.toggle)
+      toggle.checked = popupSettings.toggle;
 
-    if (settings.entry)
-      entry.value = settings.entry;
+    if (popupSettings.dropdown)
+      dropdown.value = popupSettings.dropdown
+
+    if (popupSettings.entry)
+      entry.value = popupSettings.entry;
   });
 }
 

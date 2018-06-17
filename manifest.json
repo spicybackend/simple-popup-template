@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Simple Popup Template",
+  "version": "0.1",
+  "description": "A simple template for WebExtensions with popups",
+
+  "icons": {
+    "16": "icons/16.png",
+    "24": "icons/24.png",
+    "32": "icons/32.png",
+    "128": "icons/128.png"
+  },
+
+  "permissions": [
+    "storage"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/32.png",
+    "default_title": "Simple Popup Template",
+    "default_popup": "./popup.html"
+  }
+}
