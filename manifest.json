@@ -18,6 +18,6 @@
   "browser_action": {
     "default_icon": "icons/32.png",
     "default_title": "Simple Popup Template",
-    "default_popup": "./popup.html"
+    "default_popup": "popup/popup.html"
   }
 }
